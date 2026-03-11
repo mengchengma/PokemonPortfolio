@@ -5,7 +5,7 @@ export const PROJECTS = [
     description:
       "Internal budget analysis tool at InterSoft Associates. Automated executive reporting with Excel exports, reducing report generation time by 94%. Built 25+ C# endpoints connecting React to SQL Server for 30 employees.",
     emoji: "⏱️",
-    spritePath: "/sprites/celebi.gif",
+    spritePath: "/sprites/gengar.gif",
     types: ["React", "C#", "SQL Server"],
     link: "https://github.com/mengchengma",
     role: "SOFTWARE DEV",
@@ -22,7 +22,7 @@ export const PROJECTS = [
     description:
       "Real-time multiplayer card game with up to 3 players per room. Features betting system, hand splitting, dealer logic, and automated card reveals through WebSocket communication.",
     emoji: "🃏",
-    spritePath: "/sprites/mew.gif",
+    spritePath: "/sprites/arceus-rock.gif",
     types: ["React", "TypeScript", "Node.js", "Socket.io"],
     link: "https://github.com/mengchengma",
     role: "SOLO TRAINER",
