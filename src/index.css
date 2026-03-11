@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --blue-dark: #1a3a5c;
+  --mid-blue: #2563a8;
+  --light-blue: #4a90d9;
+  --pale-blue: #a8d4f5;
+  --water-teal: #0e7fa8;
+  --gold: #f5c842;
+  --white: #f0f8ff;
+}
+
+@theme {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-vt: 'VT323', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--blue-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px 16px 60px;
+  font-family: var(--font-pixel);
+  image-rendering: pixelated;
+  overflow-x: hidden;
+}
+
+/* Scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(74,144,217,0.04) 3px,
+    rgba(74,144,217,0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-110vh) scale(0.6); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 200%; }
+  100% { background-position: -200% -200%; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-blinkBorder {
+  animation: blinkBorder 2s ease-in-out infinite;
+}
+
+@keyframes blinkBorder {
+  0%, 100% { border-color: rgba(74,144,217,0.3); }
+  50% { border-color: rgba(74,144,217,0.7); }
+}
+
+.animate-shimmer {
+  animation: shimmer 4s linear infinite;
+}
+
+.animate-cardIn {
+  animation: cardIn 0.6s ease-out both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
