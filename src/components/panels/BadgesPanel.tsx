@@ -1,11 +1,16 @@
+import { useState } from "react";
 import { BADGES } from "../../config/badges";
 import { getAsset } from "../../utils/assets";
+import BadgeModal from "../shared/BadgeModal";
 
 export default function BadgesPanel() {
+  const [selectedName, setSelectedName] = useState<string | null>(null);
+  const selectedBadge = BADGES.find((b) => b.name === selectedName) ?? null;
+
   return (
     <div className="p-8 animate-fadeIn">
       <div className="font-pixel text-[10px] text-[var(--gold)] tracking-[4px] mb-5 pb-3 border-b border-[rgba(245,200,66,0.2)]">
-        SKILL BADGES OBTAINED
+        GYM BADGES — EXPERIENCE
       </div>
       <div className="grid grid-cols-4 gap-5 max-[480px]:grid-cols-3">
         {BADGES.map((badge) => {
@@ -13,8 +18,13 @@ export default function BadgesPanel() {
           return (
             <div
               key={badge.name}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedName(badge.name);
+              }}
               className="flex flex-col items-center gap-[10px] p-5 bg-[rgba(10,31,54,0.5)]
                 border border-[rgba(74,144,217,0.25)] rounded-[3px] transition-all duration-200
+                cursor-pointer
                 hover:border-[var(--gold)] hover:bg-[rgba(245,200,66,0.05)] hover:-translate-y-[2px]
                 hover:shadow-[0_4px_12px_rgba(245,200,66,0.15)]"
             >
@@ -29,12 +39,19 @@ export default function BadgesPanel() {
                 {badge.name}
               </div>
               <div className="font-vt text-[22px] text-[var(--pale-blue)] text-center leading-[1.2]">
-                {badge.tech}
+                {badge.company}
               </div>
             </div>
           );
         })}
       </div>
+
+      {selectedBadge && (
+        <BadgeModal
+          badge={selectedBadge}
+          onClose={() => setSelectedName(null)}
+        />
+      )}
     </div>
   );
 }
