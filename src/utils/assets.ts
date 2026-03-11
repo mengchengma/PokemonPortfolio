@@ -3,6 +3,6 @@ export type Asset =
   | { type: "emoji"; value: string };
 
 export function getAsset(path: string | null, fallback: string): Asset {
-  if (path) return { type: "image", src: path };
+  if (path) return { type: "image", src: import.meta.env.BASE_URL + path.replace(/^\//, "") };
   return { type: "emoji", value: fallback };
 }
