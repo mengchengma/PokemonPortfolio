@@ -28,7 +28,6 @@ body {
   justify-content: flex-start;
   padding: 24px 16px 60px;
   font-family: var(--font-pixel);
-  image-rendering: pixelated;
   overflow-x: hidden;
 }
 

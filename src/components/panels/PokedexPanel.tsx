@@ -24,7 +24,7 @@ export default function PokedexPanel() {
                 e.stopPropagation();
                 setSelectedId(project.id);
               }}
-              className="grid grid-cols-[60px_1fr] gap-5 bg-[rgba(10,31,54,0.5)]
+              className="grid grid-cols-[68px_1fr] gap-5 bg-[rgba(10,31,54,0.5)]
                 border border-[rgba(74,144,217,0.25)] rounded-[3px] p-5 cursor-pointer
                 transition-all duration-200 relative overflow-hidden
                 hover:border-[var(--light-blue)] hover:bg-[rgba(37,99,168,0.15)]
@@ -38,7 +38,7 @@ export default function PokedexPanel() {
                 </div>
                 <div className="text-[36px] block text-center" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.4))" }}>
                   {asset.type === "image" ? (
-                    <img src={asset.src} alt={project.name} className="w-12 h-12 pixelated mx-auto mt-4" />
+                    <img src={asset.src} alt={project.name} className="w-14 h-14 mx-auto mt-5" />
                   ) : (
                     asset.value
                   )}
