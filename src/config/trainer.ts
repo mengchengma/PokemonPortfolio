@@ -1,5 +1,5 @@
 export const TRAINER = {
-  name: "MENG",
+  name: "MENG CHENG MA",
   title: "SOFTWARE ENGINEER",
   id: "666888",
   location: "New York City, USA",
