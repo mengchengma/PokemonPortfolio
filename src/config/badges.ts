@@ -22,6 +22,28 @@ export const BADGES = [
     skills: ["React", "C#", "SQL Server", "REST API", "WPF", "TFS"],
   },
   {
+    name: "GRADUATE",
+    company: "NYIT",
+    period: "Sep 2021 – Dec 2025",
+    location: "New York, NY",
+    imagePath: "/badges/graduate.png",
+    emoji: "🎓",
+    description:
+      "Bachelor of Science in Computer Science from New York Institute of Technology. GPA: 3.8. Recipient of the Co-op Award at NYIT's 4th Annual Ingenium Awards. Relevant coursework: Data Structures & Algorithms, Software Engineering, Database Systems, Operating Systems & Networks, Intro to Artificial Intelligence.",
+    skills: ["B.S. Computer Science", "GPA: 3.8", "Co-op Award", "Class of 2025"],
+  },
+  {
+    name: "CERTIFIED",
+    company: "Various",
+    period: "Aug 2018 – Mar 2026",
+    location: "Online",
+    imagePath: "/badges/certified.png",
+    emoji: "📜",
+    description:
+      "AWS Academy Graduate — Cloud Foundations (AWS, 2021). Introduction to Agent Skills (Anthropic, 2026). Introduction to Model Context Protocol (Anthropic, 2026). Claude Code in Action (Anthropic, 2026). HTML Essential Training (LinkedIn, 2023). HTML Course (Codecademy, 2018). CSS Course (Codecademy, 2018).",
+    skills: ["AWS Cloud", "Claude / MCP", "HTML/CSS"],
+  },
+  {
     name: "RESEARCHER",
     company: "NYIT",
     period: "Oct 2024 – May 2025",

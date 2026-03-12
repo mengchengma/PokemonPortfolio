@@ -84,17 +84,9 @@ export default function PokedexModal({
               "linear-gradient(90deg, var(--mid-blue), var(--water-teal), var(--mid-blue))",
           }}
         >
-          <div className="flex gap-5">
-            <span className="font-pixel text-[9px] text-[var(--white)] tracking-[2px]">
-              INFO
-            </span>
-            <span className="font-pixel text-[9px] text-[var(--pale-blue)] tracking-[2px] opacity-50">
-              STATS
-            </span>
-            <span className="font-pixel text-[9px] text-[var(--pale-blue)] tracking-[2px] opacity-50">
-              LINKS
-            </span>
-          </div>
+          <span className="font-pixel text-[9px] text-[var(--white)] tracking-[2px]">
+            INFO
+          </span>
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -192,19 +184,21 @@ export default function PokedexModal({
         </div>
 
         {/* Footer with link */}
-        <div className="px-5 py-3 flex justify-center">
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="font-pixel text-[9px] text-[var(--gold)] tracking-[2px]
-              border border-[var(--gold)] rounded-[3px] px-4 py-2 hover:bg-[rgba(245,200,66,0.1)]
-              transition-colors duration-200 no-underline"
-          >
-            VIEW ON GITHUB
-          </a>
-        </div>
+        {project.link && (
+          <div className="px-5 py-3 flex justify-center">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="font-pixel text-[9px] text-[var(--gold)] tracking-[2px]
+                border border-[var(--gold)] rounded-[3px] px-4 py-2 hover:bg-[rgba(245,200,66,0.1)]
+                transition-colors duration-200 no-underline"
+            >
+              VIEW PROJECT
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

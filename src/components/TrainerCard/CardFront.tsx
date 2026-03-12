@@ -67,9 +67,9 @@ export default function CardFront({ onFlip }: { onFlip: () => void }) {
           </div>
           <div className="grid grid-cols-2 gap-3 mt-2">
             <Stat label="PLAY TIME" number={`${TRAINER.stats.experience}`} unit="years exp" />
-            <Stat label="MONEY" number={`${TRAINER.stats.features}`} unit="features" />
+            <Stat label="HP" number={TRAINER.stats.hp} unit="" />
             <Stat label="POKEDEX" number={`${TRAINER.stats.projects}`} unit="projects" />
-            <Stat label="BADGES" number={`${TRAINER.stats.badges}`} unit="skills" />
+            <Stat label="BADGES" number={`${TRAINER.stats.badges}`} unit="earned" />
           </div>
         </div>
       </div>

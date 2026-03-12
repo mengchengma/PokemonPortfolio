@@ -47,8 +47,18 @@ export default function CardBack() {
         {THEME.version} VERSION
       </div>
 
+      {/* Trainer bio */}
+      <div className="mt-4 px-8 text-center relative z-10">
+        <div className="font-pixel text-[9px] text-[var(--pale-blue)] tracking-[3px] mb-2">
+          TRAINER PROFILE
+        </div>
+        <div className="font-vt text-[18px] text-[rgba(168,212,245,0.5)] leading-[1.4]">
+          {TRAINER.bio}
+        </div>
+      </div>
+
       {/* Secret info */}
-      <div className="mt-6 flex flex-col items-center relative z-10">
+      <div className="mt-4 flex flex-col items-center relative z-10">
         <div className="font-vt text-[20px] text-[rgba(168,212,245,0.4)] tracking-[2px]">
           {TRAINER.email}
         </div>
