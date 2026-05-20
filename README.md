@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# Pokemon Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Pokemon Sapphire-themed personal portfolio built as an interactive Trainer Card. Built with React, TypeScript, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+**Live site:** https://mengchengma.github.io/PokemonPortfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About
 
-## React Compiler
+The portfolio is a single-page application. The whole site is one Trainer Card mounted from `App.tsx`, and navigation happens entirely in React state — `TrainerCard.tsx` tracks a `flipped` boolean for the card flip, and `CardFront.tsx` tracks the active tab to swap between the Badges, Pokedex, Party, and Contact panels. There are no routes, no page reloads, and no server — the production build is a static bundle of HTML, JS, and assets served from GitHub Pages.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All content (trainer info, badges, projects, party, theme) is data-driven from `src/config/`, so updating the portfolio is just editing those files. The card flip uses a CSS 3D transform from `TrainerCard.module.css`, while everything else is styled with Tailwind 4 and CSS variables defined in `index.css`.
 
-## Expanding the ESLint configuration
+The four tabs on the card:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **BADGES** — Work experience as gym badges
+- **POKEDEX** — Projects as Pokemon entries with detail modals
+- **PARTY** — Tech stack represented as a Pokemon party with HP bars
+- **PKMN CTR** — Contact info and links
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS 4
+- Press Start 2P / VT323 fonts for the retro pixel aesthetic
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Local Development
+
+```bash
+npm install
+npm run dev       # start dev server
+npm run build     # type-check + production build
+npm run lint      # run ESLint
+npm run preview   # preview the production build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Auto-deploys to GitHub Pages via `.github/workflows/deploy.yml` on every push to `main`.
